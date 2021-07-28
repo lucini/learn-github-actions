@@ -4,8 +4,8 @@ on:
     branches:
       - 'master'
 jobs:
-  test:
-    name: Test and Lint
+  build:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,25 +16,10 @@ jobs:
           node-version: '14'
           cache: 'npm'
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Linting
         run: npm run lint
-      - name: Testing
-        run: npm run test
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs:
-      - 'test'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node 14
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm i
       - name: Building
         run: npm run build
+      - name: Testing
+        run: npm run test
