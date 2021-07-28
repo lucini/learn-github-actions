@@ -1,5 +1,7 @@
 
 
+[![Nx App Build](https://github.com/lucini/learn-github-actions/actions/workflows/learn-github-actions.yml/badge.svg)](https://github.com/lucini/learn-github-actions/actions/workflows/learn-github-actions.yml)
+
 # LearnGithubActions
 
 This project was generated using [Nx](https://nx.dev).
