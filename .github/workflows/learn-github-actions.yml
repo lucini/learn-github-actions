@@ -23,3 +23,8 @@ jobs:
         run: npm run build
       - name: Testing
         run: npm run test
+      - name: Notifying via Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
